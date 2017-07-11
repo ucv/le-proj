@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Le Web Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.css">
+    <style>
+
+
+        .products > div {
+            margin-bottom: 30px;
+        }
+
+        .product > h3 {
+            text-align: center;
+        }
+        
+        .error{
+            display: none;
+        }
+
+
+    </style>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home">Personal</a></li>
+                    <li><a data-toggle="tab" href="#menu1">Account</a></li>
+                    <li><a href="#menu2" id="menu_togle2">Contact</a></li>
+                    <li><a href="#menu3" id="menu_togle3">Loan Period</a></li>
+                    <li><a href="#menu4" id="menu_togle4">Review your Order</a></li>
+                </ul>
+                <br>
+                <form>
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <label for="fname" >First Name:</label>
+                                    <input type="text" class="form-control" id="fname">
+                                    <span class="error">Must have at least 3 characters and maximum 225 characters</span>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="lname">Last Name:</label>
+                                    <input type="text" class="form-control" id="lname">
+                                    <span class="error">Must have at least 3 characters and maximum 225 characters</span>
+                                </div>
+                                <div class='col-sm-6'>
+                                    <div class="form-group">
+                                        <label for="birthday">Birthday:</label>
+                                        <div class='input-group date'>
+                                            <input type='text' class="form-control" id='birthday'/>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                        <span class="error">Select your birthday</span>
+                                    </div>
+                                </div>
+                                <div class='col-sm-6'>
+                                    <div class="form-group">
+                                        <label for="sex">Gender</label>
+                                        <div class="form-group">
+                                            <select class="form-control" id="sex">
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="menu1" class="tab-pane fade">
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <label for="username">Username:</label>
+                                    <input type="text" class="form-control" id="username">
+                                    <span class="error">Must have at least 3 characters and maximum 225 characters</span>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" id="email">
+                                    <span class="error">Must be a valid email<br><br></span>
+
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="password">Password:</label>
+                                    <input type="password" class="form-control" id="password">
+                                    <span class="error">Must have at least 3 characters and maximum 225 characters</span>
+
+
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="password_confirm">Password:</label>
+                                    <input type="password" class="form-control" id="password_confirm">
+                                    <span class="error">Must be the same password</span>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="menu2" class="tab-pane fade">
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <label for="phone">Phone:</label>
+                                    <input type="text" class="form-control" id="phone">
+                                    <span class="error">Must be a valid phone number</span>
+
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="address">Address:</label>
+                                    <input type="text" class="form-control" id="address">
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label for="add_info">Additional Info:</label>
+                                    <input type="text" class="form-control" id="add_info">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="menu3" class="tab-pane fade">
+                            <div class="row">
+                                <div class='col-sm-6'>
+                                    <div class="form-group">
+                                        <label for="start_date">Start Date:</label>
+                                        <div class='input-group date' >
+                                            <input type='text' class="form-control" id='start_date' />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                        <span class="error">Must select a start date</span>
+
+                                    </div>
+                                </div>
+                                <div class='col-sm-6'>
+                                    <div class="form-group">
+                                        <label for="end_date">End Date:</label>
+                                        <div class='input-group date' >
+                                            <input type='text' class="form-control" id='end_date'/>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                        <span class="error">Must select an end date</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="menu4" class="tab-pane fade">
+                            <div class="row">
+                                <h1>Review your order</h1>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Anuleaza</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Design template</h1>
+        <p class="lead">Un template pentru a merge mai departe.<br> Un lorem ipsum dolor pentru effect.</p>
+    </div>
+
+    <div class="row products">
+        <div class="col-lg-3">
+            <div class="product">
+                <h3>Produs 1</h3>
+                <a href="product.html">
+                    <img src="http://via.placeholder.com/350x350" class="img-responsive">
+                </a>
+                <button type="button" class="btn center-block" data-toggle="modal" data-target="#myModal">Comanda Acum
+                </button>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="product">
+                <h3>Produs 1</h3>
+                <a href="product.html">
+                    <img src="http://via.placeholder.com/350x350" class="img-responsive">
+                </a>
+                <button type="button" class="btn center-block">Comanda Acum</button>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="product">
+                <h3>Produs 1</h3>
+                <a href="product.html">
+                    <img src="http://via.placeholder.com/350x350" class="img-responsive">
+                </a>
+                <button type="button" class="btn center-block">Comanda Acum</button>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="product">
+                <h3>Produs 1</h3>
+                <a href="product.html">
+                    <img src="http://via.placeholder.com/350x350" class="img-responsive">
+                </a>
+                <button type="button" class="btn center-block">Comanda Acum</button>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="product">
+                <h3>Produs 1</h3>
+                <a href="product.html">
+                    <img src="http://via.placeholder.com/350x350" class="img-responsive">
+                </a>
+                <button type="button" class="btn center-block">Comanda Acum</button>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="product">
+                <h3>Produs 1</h3>
+                <a href="product.html">
+                    <img src="http://via.placeholder.com/350x350" class="img-responsive">
+                </a>
+                <button type="button" class="btn center-block">Comanda Acum</button>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="product">
+                <h3>Produs 1</h3>
+                <a href="product.html">
+                    <img src="http://via.placeholder.com/350x350" class="img-responsive">
+                </a>
+                <button type="button" class="btn center-block">Comanda Acum</button>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-datetimepicker.js"></script>
+
+<script>
+    $('#birthday').datetimepicker({format: 'DD/MM/YYYY'});
+    $('#start_date').datetimepicker({format: 'DD/MM/YYYY'});
+    $('#end_date').datetimepicker({format: 'DD/MM/YYYY'});
+
+    var current_tab = "home";
+
+    function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    function validatePhone(phone) {
+        var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+        return re.test(phone);
+    }
+
+    function check_valid(_check_tab) {
+        $('form .error').hide();
+        switch (_check_tab){
+            case "home":{
+                var no_errors = true;
+                var element = $('#fname');
+                if(element.val().length < 3 || element.val().length > 255){
+                    no_errors = false;
+                    element.next().html("<span>Must have at least 3 characters and maximum 225 characters !</span>");
+                    element.next().show();
+                }
+
+                var element = $('#lname');
+                if(element.val().length < 3 || element.val().length > 255){
+                    no_errors = false;
+                    element.next().html("<span>Must have at least 3 characters and maximum 225 characters !</span>");
+                    element.next().show();
+                }
+
+                var element = $('#birthday');
+                if(element.val().length == 0){
+                    no_errors = false;
+                    element.parent().next().html("<span>Select your birthday</span>");
+                    element.parent().next().show();
+                }
+                if(no_errors){
+                    $("#menu_togle2").attr("data-toggle", "tab");
+                }
+
+                return no_errors;
+            }break;
+            case "menu1":{
+                var no_errors = true;
+
+                var element = $('#username');
+                if(element.val().length < 5 || element.val().length > 255){
+                    no_errors = false;
+                    element.next().html("<span>Must have at least 5 characters and maximum 225 characters !</span>");
+                    element.next().show();
+                }
+                var element = $('#email');
+                if(!validateEmail(element.val())){
+                    no_errors = false;
+                    element.next().html("<span>Must be a valid email !</span>");
+                    element.next().show();
+                }
+                var element = $('#password');
+                if(element.val().length < 5 || element.val().length > 255){
+                    no_errors = false;
+                    element.next().html("<span>Must have at least 5 characters and maximum 225 characters !</span>");
+                    element.next().show();
+                }
+                var element_p2 = $('#password_confirm');
+                if(element.val() != element_p2.val()){
+                    no_errors = false;
+                    element_p2.next().html("<span>Passwords must be the same!</span>");
+                    element_p2.next().show();
+                }
+
+                if(no_errors){
+                    $("#menu_togle3").attr("data-toggle", "tab");
+                }
+
+                return no_errors;
+            }break;
+            case "menu2":{
+                var no_errors = true;
+
+                var element = $('#phone');
+                if(!validatePhone(element.val())){
+                    no_errors = false;
+                    element.next().html("<span>Must be a valid phone number !</span>");
+                    element.next().show();
+                }
+
+                var element = $('#address');
+                if(element.val().length == 0){
+                    no_errors = false;
+                    element.next().html("<span>Please complete this field</span>");
+                    element.next().show();
+                }
+
+                return no_errors;
+            }break;
+            case "menu3":{
+
+                var no_errors = true;
+
+                var element = $('#start_date');
+                if(element.val().length == 0){
+                    no_errors = false;
+                    element.parent().next().html("<span>Select a start date</span>");
+                    element.parent().next().show();
+                }
+
+                var element = $('#end_date');
+                if(element.val().length == 0){
+                    no_errors = false;
+                    element.parent().next().html("<span>Select an end date</span>");
+                    element.parent().next().show();
+                }
+
+                if(no_errors){
+                    $("#menu_togle4").attr("data-toggle", "tab");
+                }
+
+                return no_errors;
+            }break;
+            case "menu4":{
+
+
+
+
+                return true;
+            }break;
+            default:{
+                alert("We don't have:"+_check_tab);
+                return false;
+            }
+        }
+    }
+
+
+    function recheck(){
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            var target = $(e.target).attr("href").substring(1); // activated tab
+            if(check_valid(current_tab)){
+                current_tab = target;
+                console.log("yeah it works switch to",target);
+                recheck();
+            }else{
+                $('.nav-tabs a[href="#' + current_tab + '"]').tab('show');
+                console.log("nope");
+
+            }
+        });
+    }
+
+    recheck();
+
+    
+</script>
+
+</body>
+</html>
